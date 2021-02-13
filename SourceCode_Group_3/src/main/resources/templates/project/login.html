@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>INDIVILISTER : Projects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/login.css}"> 
+    <title>LOGIN</title>
+
+</head>
+<body>
+	  
+	<!-- END Header --> <!-- START Content -->
+	<form class="container" 
+        th:action="@{/project/gomain}" method="GET">
+		<div class="login-box" align="center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/768px-Video-Game-Controller-Icon-IDV-green.svg.png" class="avatar" >
+            <H1></H1>
+            Username : <input type="text" maxlength="15" name="name"> <br><br>
+            Password:<input type="password" name="password" maxlength="15"><br><br>
+            <button type="submit">
+                Login
+            </button>
+        </div>
+        </form>
+	<!-- END Content -->
+	 
+	 
+</body>
+</html>
+
+

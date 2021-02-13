@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+    /* background: url(https://wallpaperplay.com/walls/full/f/e/a/2206.jpg); */
+
+    background-size: cover;
+    
+    font-family: sans-serif;
+   } 
+
+#root{
+    width: auto;
+}
+.container{
+    max-width: 980px;
+    margin: 0 auto;
+}
+.header{
+    background: #333;
+    height: 80px;
+}
+.header-con{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+.logo-container a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2rem;
+  
+}
+.header-btn{
+    background: rgb(255, 118, 118);
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid rgb(255, 96, 96);
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-right: 2px;
+}
+.header-btn:hover{
+    background:rgb(199, 83, 83);
+    border: 2px solid rgb(255, 255, 255);
+}
+.menu{
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+}
+.menu li{
+    text-align: center;
+    margin-right: 2rem;
+}
+.menu li a{
+    text-decoration: none;
+    color: #fff; 
+}
+.mobile-menu{
+    display: none;
+}
+
+@media screen and (max-width: 480px){
+    .mobile-menu{
+        display: block;
+        color: #fff;
+        font-size: 2rem;
+    }
+    .header{
+        padding: 0 2rem;
+    }
+    .menu{
+        width: 100%;
+        height: auto;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        top: 64px;
+        left: -100%;
+        opacity: 0;
+        transition: 0.5s ease;
+    }
+    .menu.active{
+        background: #111;
+        left: 0;
+        opacity: 1;
+        z-index: 1;
+        padding-left: 0;
+        align-content: center;
+        transition: 0.5s ease;
+    }
+    .menu li{
+        padding-right: 0;
+        
+    }
+    .menu-list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vw;
+    }
+
+
+}

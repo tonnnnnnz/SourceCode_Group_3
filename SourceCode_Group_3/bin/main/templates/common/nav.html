@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="css/header.css">
+  </head>
+<body>
+ 	
+ 	<nav th:fragment="nav">
+    <div class = "header" >
+        <div class = "container" >
+            <div class = "header-con" >
+                <div class="logo-container">
+                    <a th:href="@{/project/go_Main}">Meeting </a>
+                </div>
+                  
+                      <ul class="menu">
+                        <li class="menu-list" >
+                            <a th:href="@{/project/go_Main}">BOOKED</a>
+                        </li>
+                        <li class="menu-list" >
+                            <a th:href="'/project/create' + '?form'">FORM</a>
+                        </li>
+                        <li class="menu-list" >
+                        <a>UserName:</a>
+                            <a th:text="${user.username}"> error</a>
+                        </li>
+                        <li class="header-btn">
+                        <a href="/project">SignOut</a>
+                        </li>
+                    </ul>            
+            </div> 
+        </div> 
+    </div>
+    </nav>
+</body>
+</html>

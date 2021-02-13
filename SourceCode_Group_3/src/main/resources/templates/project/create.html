@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>INDIVILISTER : Let's create a new project</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/header.css}" />
+  
+ <style type="text/css">
+ .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+input  {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input:focus {
+  border: 3px solid #555;
+}
+ </style>
+</head>
+     
+   <body>
+   
+   <nav th:include="common/nav :: nav"></nav>
+
+    <div class="container">
+        <div class="contact_area" style="background: whitesmoke ; 
+                                        margin-top: 5%; 
+                                        margin-left: 20%; 
+                                        margin-right: 20%;
+                                        padding-top: 15px;
+                                        padding-bottom: 15px;
+                                        border-style: solid;
+                                        border-color: gray;
+                                        text-align: center;">   
+
+            <div style="margin-right: 20%; margin-left: 20%;" >
+            
+            <form th:action="@{/project/create}" th:object="${projectForm}"
+							method="POST" accept-charset="utf-8"
+							enctype="application/x-www-form-urlencoded"
+							class="form-horizontal">
+							
+                <h1>Meeting room Booking</h1>
+					<div style="padding-top: 15px; size: 100%;">
+						<label id="title">Title :</label> <input class="form-control" id="title" type="text" name="title" required=""><br>
+					</div>
+					
+					<div style="padding-top: 15px; size: 100%;">
+						<label id="fname">First Name :</label> <input class="form-control" id="fname" type="text" name="fname" required=""><br>
+					</div>
+					
+					<div style="padding-top: 15px; size: 100%;">
+						<label id="lname">Last Name :</label> <input class="form-control" id="lname" type="text" name="lname" required=""><br>
+					</div>
+                    
+                    <div style="padding-top: 15px; size: 100%;"> 
+                    	<label id="date">Date :</label><input class="form-control" th:field="*{date}" id="name" type="date" name="date" required=""><br>
+                    </div>
+                    
+                    <div style="padding-top: 15px; size: 100%;"> 
+                    	<label id="stime">Start Time :</label>
+                   		<input class="form-control" id="stime" type="time" name="stime" required=""><br>    
+                    </div>
+                    
+                    <div style="padding-top: 15px; size: 100%;"> 
+                    	<label id="etime">End Time :</label>
+                   		<input class="form-control" id="etime" type="time" name="etime" required=""><br>    
+                    </div>
+                    
+                    <div style="padding-top: 15px; size: 100%;"> 
+                    	<label id="meeting">Meeting Room:</label>
+							<select name="meeting" id="meeting">
+								<optgroup label="สำนักงานใหญ่ร่มเกล้า(HO)">
+									<option value="Snailwhite1:อาคาร 1 ชั้น 1 (12)">(HO) Snailwhite 1:อาคาร 1 ชั้น 1 (12)</option>
+		                            <option value="Snailwhite3:อาคาร 1 ชั้น 1 (5) ">(HO) Snailwhite 3:อาคาร 1 ชั้น 1 (5)</option>
+		                            <option value="Snailwhite5:อาคาร 1 ชั้น 1 (12)">(HO) Snailwhite 5:อาคาร 1 ชั้น 1 (12)</option>
+		                            <option value="Snailwhite6:อาคาร 2 ชั้น 1 (6)">(HO) Snailwhite 6:อาคาร 2 ชั้น 1 (6)</option>
+		                            <option value="Snailwhite7:อาคาร 2 ชั้น 1 (12)">(HO) Snailwhite 7:อาคาร 2 ชั้น 1 (12)</option>
+		                            <option value="Snailwhite8:อาคาร 2 ชั้น 2 (25)">(HO) Snailwhite 8:อาคาร 2 ชั้น 2 (25)</option>
+		                            <option value="Snailwhite9:อาคาร 3 ชั้นลอย (12)">(HO) Snailwhite 9:อาคาร 3 ชั้นลอย (12)</option>
+								</optgroup>
+								<optgroup label="สาขาโรจนะ(RJ)">
+									<option value="RJmeet1:อาคารหน้า ชั้น 1 (4)">(RJ) ห้องประชุม 1: อาคารหน้า ชั้น 1 (4)</option>
+		                            <option value="RJmeet2:อาคารหน้า ชั้น 1 (4)">(RJ) ห้องประชุม 2: อาคารหน้า ชั้น 1 (4)</option>
+		                            <option value="RJmeet4:อาคารหน้า ชั้น 2 (16)">(RJ) ห้องประชุม 4: อาคารหน้า ชั้น 2 (16)</option>
+		                            <option value="RJmeet5:อาคารหน้า ชั้น 2 (25)">(RJ) ห้องประชุม 5: อาคารหน้า ชั้น 2 (25)</option>
+								</optgroup>
+							</select>
+					</div>
+                    
+                    <div style="padding-top: 15px; size: 100%;">
+                    	<label id="detail">Detail :</label>
+                   		<input class="form-control" th:field="*{detail}" id="detail" type="text" name="detail" required=""><br>
+                    </div>
+                
+             
+
+                <div style="padding-top: 15px; size: 100%;">
+               <button type="submit" class="button button1">Create</button><br>
+                </div>
+
+            </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/header.css}" />
+
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+   } 
+
+.container-he{
+    padding: 60px 350px;
+
+}
+.styled-table {
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
+}
+
+.styled-table th, .styled-table td {
+	padding: 12px 30px;
+}
+
+.styled-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+	font-weight: bold;
+	color: #009879;
+}
+
+.button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.button1 {
+	background-color: white;
+	color: black;
+	border: 2px solid #4CAF50;
+}
+</style>
+
+</head>
+
+<body>
+	<main>
+		<!-- START Navigation bar -->
+		<nav th:include="common/nav :: nav"></nav>
+
+		<!-- END Navigation bar -->
+		<!-- START Header -->
+		<div class="container-he">
+			<div class="header_a">
+				<div class="header_t">
+					<h2>Booking list</h2>
+				</div>
+			</div>
+			<!-- END Header -->
+			<!-- START Content -->
+			<div class="container">
+				<a class="button button1" th:href="@{/project/create?form}">Let's
+					create a new meeting </a>
+				<div class="row">
+					<div class="col-xs-12">
+						<table class="styled-table">
+							<tr>
+								<!--<th>ID</th> -->
+								<th>Title</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Date</th>
+								<th>Start Time</th>
+								<th>End Time</th>
+								<th>Meeting Room</th>
+								<th>Detail</th>
+							</tr>
+							<div class="col-lg-4" style="padding: 0;"
+								th:each="project, stat : ${data}">
+								<div class="materialCard success">
+									<header>
+
+
+										<tr>
+											<!-- <td th:text="${project.id}">project0001 </td>  -->
+											<td th:text="${project.title}">project0001</td>
+											<td th:text="${project.fname}">project0001</td>
+											<td th:text="${project.lname}">project0001</td>
+											<td th:text="${project.date}">project0001</td>
+											<td th:text="${project.stime}">project0001</td>
+											<td th:text="${project.etime}">project0001</td>
+											<td th:text="${project.meeting}">project0001</td>
+											<td th:text="${project.detail}">project0001</td>
+										</tr>
+
+							</header>
+
+							</div>
+							</div>
+						</table>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- END Content -->
+		<div class="push"></div>
+
+
+
+	</main>
+
+	<script type="text/javascript" language="javascript" charset="_charset"
+		src="/js/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript" language="javascript" charset="_charset"
+		src="/js/bootstrap.min.js"></script>
+
+
+	<script type="text/javascript" language="javascript" charset="_charset"
+		src="/js/main.js"></script>
+
+	<script type="text/javascript" language="javascript"
+		src="/js/Header.js"></script>
+</body>
+
+</html>
